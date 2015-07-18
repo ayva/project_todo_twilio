@@ -1,8 +1,15 @@
+<h1>Create a Task</h1>
+
+<%= render partial: 'todos/form' %>
+
+
 <h1>Todo List</h1>
 <ul class="list-group">
   <% @todos.each do |todo| %>
     <li class="list-group">
-      <%= link_to todo.text, todo_path(todo) %>
+      <%=todo.id %><%= link_to todo.text, todo_path(todo) %>
+      <input type="checkbox" name="complition_date" value ="done">
+      <br>
       <%= link_to "edit", edit_todo_path(todo) %>
       <%= link_to "delete", todo_path(todo), method: :delete, data: {confirm: "Really delete the task?"}  %>
 

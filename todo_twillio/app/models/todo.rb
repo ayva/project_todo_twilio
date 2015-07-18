@@ -1,4 +1,4 @@
-class Todo
+class Todo < ActiveRecord::Base
 
   # class << self; attr_accessor :instances; end
   
