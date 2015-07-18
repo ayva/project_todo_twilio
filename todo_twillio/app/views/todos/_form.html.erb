@@ -1,0 +1,13 @@
+<%= form_for @todo do |u| %>
+  <p>
+    <%= u.label :text %><br />
+    <%= u.text_field :text %>
+  </p>
+  <p>
+    <%= u.label Time.now %><br/>
+    
+  </p>
+  <p>
+    <%= u.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Todo List</h1>
+<ul class="list-group">
+  <% @todos.each do |todo| %>
+    <li class="list-group">
+      <%= link_to todo.text, todo_path(todo) %>
+      <%= link_to "edit", edit_todo_path(todo) %>
+      <%= link_to "delete", todo_path(todo), method: :delete, data: {confirm: "Really delete the task?"}  %>
+
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Create a Task", new_todo_path %>
