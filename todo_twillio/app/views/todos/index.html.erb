@@ -8,6 +8,7 @@
   <% @todos.each do |todo| %>
     <li class="list-group">
       <%=todo.id %><%= link_to todo.text, todo_path(todo) %>
+      <%=todo.date %>
       <input type="checkbox" name="complition_date" value ="done">
       <br>
       <%= link_to "edit", edit_todo_path(todo) %>
