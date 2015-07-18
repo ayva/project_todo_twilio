@@ -10,6 +10,8 @@
       <%=todo.id %><%= link_to todo.text, todo_path(todo) %>
       <%=todo.date %>
       <input type="checkbox" name="complition_date" value ="done">
+      <%= link_to "send sms", send_text_path(todo), method: :post%>
+        
       <br>
       <%= link_to "edit", edit_todo_path(todo) %>
       <%= link_to "delete", todo_path(todo), method: :delete, data: {confirm: "Really delete the task?"}  %>
