@@ -19,7 +19,7 @@ class TodosController < ApplicationController
   end
 
   def create
-     @todo = Todo.new (user_params)
+    @todo = Todo.new (user_params)
     @todo.save
     flash.notice = "Task '#{@todo.text}' added!"
     redirect_to todo_path(@todo)
