@@ -1,6 +1,6 @@
 module TodosHelper
 
-  def user_params
-     params.require(:todo).permit(:text, :complition_date)
+  def todo_params
+     params.require(:todo).permit(:text, :date)
   end
 end

@@ -19,14 +19,15 @@ class TodosController < ApplicationController
   end
 
   def create
-     @todo = Todo.new (user_params)
+    @todo = Todo.new (todo_params)
     @todo.save
     flash.notice = "Task '#{@todo.text}' added!"
-    redirect_to todo_path(@todo)
+    redirect_to todos_path(@todo)
   end
 
   def edit
     @todo=Todo.find(params[:id])
+    
   end
 
   def update
@@ -34,7 +35,7 @@ class TodosController < ApplicationController
 
     if @todo.update(todo_params)
       flash.notice = "Task '#{@todo.text}' updated!"
-      redirect_to todo_path(@todo)
+      redirect_to todos_path
     else
       render :edit
     end
