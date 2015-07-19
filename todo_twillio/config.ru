@@ -2,3 +2,5 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+
+bundle exec thin -R config.ru start -p $PORT -e $RACK_ENV
